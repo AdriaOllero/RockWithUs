@@ -1,0 +1,30 @@
+.backgroundHome {
+  background-image: url(../../../assets/images/thiago-barletta-WC2NzhV81HI-unsplash.jpg);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  .homeText {
+    margin-top: -200px;
+    color: white;
+    text-align: center;
+    text-shadow: black;
+    .title {
+      font-size: 100px;
+      font-weight: bolder;
+    }
+  }
+  .btn-danger {
+    width: 15%;
+    color: white;
+    margin-bottom: 175px;
+    font-weight: bolder;
+    background-color: rgb(255, 79, 79);
+    border-radius: 20px;
+    border-color: transparent;
+    padding: 1rem;
+    box-shadow: 0 0 15px black;
+    &:hover {
+      background-color: rgb(255, 51, 51);
+    }
+  }
+}
