@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BandDetailComponent } from './components/bandDetail/bandDetail.component';
 import { BandListComponent } from './components/bandList/bandList.component';
 import { HomeComponent } from './components/home/home.component';
 
@@ -9,7 +10,8 @@ import { HomeComponent } from './components/home/home.component';
   declarations: [
     AppComponent,
     BandListComponent,
-    HomeComponent
+    HomeComponent,
+    BandDetailComponent
   ],
   imports: [
     BrowserModule,
