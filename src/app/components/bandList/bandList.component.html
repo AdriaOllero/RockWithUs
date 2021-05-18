@@ -9,9 +9,9 @@
     <button class="btn btn-primary addButton">Add Band</button>
     <div class="line"></div>
 
-    <div class="bandList">
+    <div class="bandList" *ngFor="let item of allBands;let index = index">
       <ul class="list-group mx-auto">
-        <li class="list-group-item" *ngFor="let item of allBands; let index = index">
+        <li class="list-group-item">
           <div class="row">
             <div class="col">
               <img class="bandImage" src="{{item.photo}}" alt="">
@@ -20,7 +20,7 @@
               <div class="textCol">
                 <h1>{{item.name}}</h1>
                 <h3>{{item.year}}</h3>
-                <a routerLink="/bandDetail" class="btn btn-primary detailButton">Ver Detalle</a>
+                <a routerLink="/bandDetail/{{index}}" class="btn btn-primary detailButton">Ver Detalle</a>
               </div>
             </div>
             <div class="col">
@@ -31,7 +31,7 @@
                 </a>
                 <a>
                   <img class="mediaIconStart" src="../../../assets/icons/pause.png" alt="playButton"
-                  *ngIf="!booleanBands[index]">
+                    *ngIf="!booleanBands[index]">
                 </a>
               </div>
             </div>

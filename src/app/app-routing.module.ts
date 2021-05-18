@@ -8,7 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'bandList', component: BandListComponent},
-  { path: 'bandDetail', component: BandDetailComponent},
+  { path: 'bandDetail/:id', component: BandDetailComponent},
 ];
 
 @NgModule({
