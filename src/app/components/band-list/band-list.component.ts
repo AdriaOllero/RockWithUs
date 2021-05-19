@@ -51,7 +51,7 @@ export class BandListComponent implements OnInit {
     searchValue.value;
     if (searchValue.value !== '') {
       this.allBands = this.allBands.filter((band: Band) => {
-        return band.name?.includes(searchValue.value);
+        return band.name?.toLowerCase().includes(searchValue.value.toLowerCase());
       });
       console.log('patata');
     } else {
