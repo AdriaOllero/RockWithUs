@@ -23,6 +23,8 @@ export class SharedService {
     }
   }
 
+
+
   getAllBands(){
     return this.allBands
   }
@@ -37,39 +39,44 @@ export class SharedService {
     {
       name: 'Led Zeppelin',
       year: '1995',
-      photo:
-        '../../../assets/images/bandImages/ledzeppelindigitalrelease3.jpeg',
+      photo:'../../../assets/images/bandImages/ledzeppelindigitalrelease3.jpeg',
     },
     {
       name: 'Queen',
       year: '1995',
       photo: '../../../assets/images/bandImages/CsAff60UsAE9oGR.jpg',
+      bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consequuntur ratione dolor quis, earu corrupti reprehenderit aspernatur. Ad consequuntur beatae rerum quasi tempore nobis odit dolorem, culpa',
     },
     {
       name: 'Pink Floyd',
       year: '1995',
       photo: '../../../assets/images/bandImages/Pink-Floyd-simbolo.jpg',
+      bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consequuntur ratione dolor quis, earu corrupti reprehenderit aspernatur. Ad consequuntur beatae rerum quasi tempore nobis odit dolorem, culpa',
     },
     {
       name: 'Deep Purple',
       year: '1995',
       photo: '../../../assets/images/bandImages/Deep Purple.png',
+      bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consequuntur ratione dolor quis, earu corrupti reprehenderit aspernatur. Ad consequuntur beatae rerum quasi tempore nobis odit dolorem, culpa',
     },
     {
       name: 'AC/DC',
       year: '1995',
 
       photo: '../../../assets/images/bandImages/AC-DC-Logo.png',
+      bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consequuntur ratione dolor quis, earu corrupti reprehenderit aspernatur. Ad consequuntur beatae rerum quasi tempore nobis odit dolorem, culpa',
     },
     {
       name: 'The Ramones',
       year: '1995',
       photo: '../../../assets/images/bandImages/51b4aef5854b6_645x429.jpg',
+      bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consequuntur ratione dolor quis, earu corrupti reprehenderit aspernatur. Ad consequuntur beatae rerum quasi tempore nobis odit dolorem, culpa',
     },
     {
       name: 'Kiss',
       year: '1995',
       photo: '../../../assets/images/bandImages/Kiss-Logo.png',
+      bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consequuntur ratione dolor quis, earu corrupti reprehenderit aspernatur. Ad consequuntur beatae rerum quasi tempore nobis odit dolorem, culpa',
     },
   ];
 

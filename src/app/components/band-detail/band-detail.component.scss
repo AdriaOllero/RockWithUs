@@ -1,7 +1,7 @@
 .backgroundDetail {
   background-color: black;
   width: 100%;
-  height: 100vh;
+  height: fit-content;
   .flex-container {
     .bandImage {
       width: 550px;
@@ -54,6 +54,11 @@
         background-color: transparent;
         margin: 15px;
         h1 {
+          color: white;
+          font-size: 2.3rem;
+          font-family: "RocknRoll One", sans-serif;
+        }
+        h2 {
           color: white;
           font-size: 2.3rem;
           font-family: "RocknRoll One", sans-serif;

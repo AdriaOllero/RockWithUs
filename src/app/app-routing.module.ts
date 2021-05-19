@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { BandDetailComponent } from './components/bandDetail/bandDetail.component';
-import { BandListComponent } from './components/bandList/bandList.component';
+import { BandDetailComponent } from './components/band-detail/band-detail.component';
+import { BandListComponent } from './components/band-list/band-list.component';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [

@@ -1,0 +1,125 @@
+<div class="backgroundDetail">
+  <div class="flex-container">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <a routerLink="/bandList" class="btn btn-primary detailButton">Back</a>
+        </div>
+        <div class="col-md-auto">
+          <a (click)=" editText()"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-primary editButton">Edit</a>
+        </div>
+        <div class="col col-lg-2">
+          <a class="btn btn-primary detailButton" (click)="deleteBand()">Delete</a>
+        </div>
+      </div>
+    </div>
+    <!-- <audio controls id="mySong">
+    <source src="https://www.youtube.com/watch?v=pAgnJDJN4VA" type="audio/mp3">
+    </audio> -->
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Edit Band</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ngp-image-picker class="imagePicker" [_config]="imagePickerConf"></ngp-image-picker>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="Band Name" #bandName (ngModel)="bandName">
+              <label for="floatingInput">Band Name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="Year" #bandYear (ngModel)="bandYear">
+              <label for="floatingInput" >Year</label>
+            </div>
+            <div class="form-floating">
+              <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                style="height: 100px" #bandBio (ngModel)="bandBio"></textarea>
+              <label for="floatingTextarea2">Description</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Cancel</button>
+            <button  (click)="editBand(bandName.value,bandYear.value,bandBio.value)" type="button" class="btn btn-primary"
+              style="background-color: black;color: white;border-color: transparent;" data-bs-dismiss="modal" data-bs-backdrop="static">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <img class="bandImage" src="{{band.photo}}" alt="">
+        </div>
+        <div class="col-8">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div class="row g-0">
+                <div class="col-sm-6 col-md-8"><h1>{{band.name}}</h1></div>
+                <div class="col-6 col-md-4"><h2>{{band.year}}</h2></div>
+              </div>
+              <div class="line"></div>
+            </li>
+            <li class="list-group-item">
+              <h3>Description</h3>
+              <p>{{band.bio}}</p>
+            </li>
+            <li class="list-group-item">
+              <h3>Members</h3>
+              <div class="container">
+                <div class="row" style="text-align: center;">
+                  <div class="col">
+                    <img class="memberImage" src="../../../assets/images/15539599875236.jpg" alt="">
+                    <h3>Micky Jagger</h3>
+                  </div>
+                  <div class="col">
+                    <img class="memberImage" src="../../../assets/images/15539599875236.jpg" alt="">
+                    <h3>Micky Jagger</h3>
+                  </div>
+                  <div class="col">
+                    <img class="memberImage" src="../../../assets/images/15539599875236.jpg" alt="">
+                    <h3>Micky Jagger</h3>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <h3>Most Popular Songs</h3>
+              <ul class="list-group" style="margin-top: auto;">
+                <li class="list-group-item">
+                  <div class="display-inline">
+                    <h3>OUT OF THE TIME - 1996</h3>
+                  </div>
+                  <div class="line"></div>
+                </li>
+                <li class="list-group-item">
+                  <div class="display-inline">
+                    <h3>OUT OF THE TIME - 1996</h3>
+
+                  </div>
+                  <div class="line"></div>
+                </li>
+                <li class="list-group-item">
+                  <div class="display-inline">
+                    <h3>OUT OF THE TIME - 1996</h3>
+                  </div>
+                  <div class="line"></div>
+                </li>
+                <li class="list-group-item">
+                  <div class="display-inline">
+                    <h3>OUT OF THE TIME - 1996</h3>
+                  </div>
+                  <div class="line"></div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
