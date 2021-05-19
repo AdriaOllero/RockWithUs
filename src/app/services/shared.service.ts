@@ -35,29 +35,34 @@ export class SharedService {
       year: '1995',
       bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consequuntur ratione dolor quis, earu corrupti reprehenderit aspernatur. Ad consequuntur beatae rerum quasi tempore nobis odit dolorem, culpa',
       photo: '../../../assets/images/bandImages/51QmOMYg4jL._AC_SX425_.jpg',
+      song:'https://www.youtube.com/embed/Jwtyn-L-2gQ'
     },
     {
       name: 'Led Zeppelin',
       year: '1995',
       photo:'../../../assets/images/bandImages/ledzeppelindigitalrelease3.jpeg',
+      song:'https://www.youtube.com/embed/Jwtyn-L-2gQ'
     },
     {
       name: 'Queen',
       year: '1995',
       photo: '../../../assets/images/bandImages/CsAff60UsAE9oGR.jpg',
       bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consequuntur ratione dolor quis, earu corrupti reprehenderit aspernatur. Ad consequuntur beatae rerum quasi tempore nobis odit dolorem, culpa',
+      song:'https://www.youtube.com/embed/Jwtyn-L-2gQ'
     },
     {
       name: 'Pink Floyd',
       year: '1995',
       photo: '../../../assets/images/bandImages/Pink-Floyd-simbolo.jpg',
       bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consequuntur ratione dolor quis, earu corrupti reprehenderit aspernatur. Ad consequuntur beatae rerum quasi tempore nobis odit dolorem, culpa',
+      song:'https://www.youtube.com/embed/Jwtyn-L-2gQ'
     },
     {
       name: 'Deep Purple',
       year: '1995',
       photo: '../../../assets/images/bandImages/Deep Purple.png',
       bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consequuntur ratione dolor quis, earu corrupti reprehenderit aspernatur. Ad consequuntur beatae rerum quasi tempore nobis odit dolorem, culpa',
+      song:'https://www.youtube.com/embed/Jwtyn-L-2gQ'
     },
     {
       name: 'AC/DC',
@@ -65,18 +70,21 @@ export class SharedService {
 
       photo: '../../../assets/images/bandImages/AC-DC-Logo.png',
       bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consequuntur ratione dolor quis, earu corrupti reprehenderit aspernatur. Ad consequuntur beatae rerum quasi tempore nobis odit dolorem, culpa',
+      song:'https://www.youtube.com/embed/pAgnJDJN4VA',
     },
     {
       name: 'The Ramones',
       year: '1995',
       photo: '../../../assets/images/bandImages/51b4aef5854b6_645x429.jpg',
       bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consequuntur ratione dolor quis, earu corrupti reprehenderit aspernatur. Ad consequuntur beatae rerum quasi tempore nobis odit dolorem, culpa',
+      song:'https://www.youtube.com/embed/Jwtyn-L-2gQ'
     },
     {
       name: 'Kiss',
       year: '1995',
       photo: '../../../assets/images/bandImages/Kiss-Logo.png',
       bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consequuntur ratione dolor quis, earu corrupti reprehenderit aspernatur. Ad consequuntur beatae rerum quasi tempore nobis odit dolorem, culpa',
+      song:'https://www.youtube.com/embed/Jwtyn-L-2gQ'
     },
   ];
 

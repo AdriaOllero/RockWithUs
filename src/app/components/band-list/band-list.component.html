@@ -3,7 +3,7 @@
     <div class="searchBar mx-auto">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Buscar banda" aria-label="Recipient's username"
-          aria-describedby="button-addon2" [value]="nameSearch">
+          aria-describedby="button-addon2" (input)="search(band)" #band>
       </div>
     </div>
     <button class="btn btn-primary addButton" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add Band</button>
@@ -18,7 +18,19 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <ngp-image-picker class="imagePicker" [_config]="imagePickerConf" >Selecciona una </ngp-image-picker>
+            <div class="file-upload">
+              <div class="image-upload-wrap" *ngIf="!customDisplay">
+                <input class="file-upload-input" [(ngModel)]="photo" type='file' (change)="handleFileImage($event);" accept="image/*" />
+                <div class="drag-text">
+                </div>
+              </div>
+              <div class="file-upload-content" *ngIf="customDisplay">
+                <img class="file-upload-image" [src]="photo" alt="your image" />
+
+              </div>
+            </div>
+            <input class="form-control  d-none" (change)="handleFileImage($event)" type="file" id="formFile" #formfiles>
+
             <div class="form-floating mb-3">
               <input type="email" class="form-control" id="floatingInput" placeholder="Band Name" #bandName>
               <label for="floatingInput">Band Name</label>
@@ -35,13 +47,16 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary"(click)="addNewBand(bandName.value,bandYear.value,bandBio.value)"
-              style="background-color: black;color: white;border-color: transparent;" data-bs-dismiss="modal">Save</button>
+            <button type="button" class="btn btn-primary"
+              (click)="addNewBand(bandName.value,bandYear.value,bandBio.value)"
+              style="background-color: black;color: white;border-color: transparent;"
+              data-bs-dismiss="modal">Save</button>
           </div>
         </div>
       </div>
     </div>
-    <div class="bandList" *ngFor="let item of allBands;let index = index">
+
+    <div class="bandList" *ngFor="let item of allBands;let index = index" >
       <ul class="list-group mx-auto">
         <li class="list-group-item">
           <div class="row">
@@ -57,15 +72,19 @@
             </div>
             <div class="col">
               <div (click)="mediaIcon(index)">
-                <a>
+                <a data-bs-toggle="modal" data-bs-target="#audio">
                   <img class="mediaIconStart" src="../../../assets/icons/round-play-button.png" alt="playButton"
                     *ngIf="booleanBands[index]">
                 </a>
-                <a>
+
+                <a data-bs-toggle="modal" data-bs-target="#audio">
                   <img class="mediaIconStart" src="../../../assets/icons/pause.png" alt="playButton"
                     *ngIf="!booleanBands[index]">
                 </a>
+
               </div>
+              <iframe *ngIf="!booleanBands[index]" width="80%" height="auto" src="https://www.youtube.com/embed/Jwtyn-L-2gQ" allowfullscreen>
+              </iframe>
             </div>
           </div>
         </li>

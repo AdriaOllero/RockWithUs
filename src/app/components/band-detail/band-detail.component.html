@@ -13,9 +13,7 @@
         </div>
       </div>
     </div>
-    <!-- <audio controls id="mySong">
-    <source src="https://www.youtube.com/watch?v=pAgnJDJN4VA" type="audio/mp3">
-    </audio> -->
+
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
       aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -26,7 +24,23 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <ngp-image-picker class="imagePicker" [_config]="imagePickerConf"></ngp-image-picker>
+
+
+            <div class="file-upload">
+              <div class="image-upload-wrap" *ngIf="!customDisplay">
+                <input class="file-upload-input" [(ngModel)]="photo" type='file' (change)="handleFileImage($event);" accept="image/*" />
+                <div class="drag-text">
+                </div>
+              </div>
+              <div class="file-upload-content" *ngIf="customDisplay">
+                <img class="file-upload-image" [src]="photo" alt="your image" />
+
+              </div>
+            </div>
+            <input class="form-control  d-none" (change)="handleFileImage($event)" type="file" id="formFile" #formfiles>
+
+
+
             <div class="form-floating mb-3">
               <input type="email" class="form-control" id="floatingInput" placeholder="Band Name" #bandName (ngModel)="bandName">
               <label for="floatingInput">Band Name</label>
@@ -74,6 +88,7 @@
                   <div class="col">
                     <img class="memberImage" src="../../../assets/images/15539599875236.jpg" alt="">
                     <h3>Micky Jagger</h3>
+
                   </div>
                   <div class="col">
                     <img class="memberImage" src="../../../assets/images/15539599875236.jpg" alt="">

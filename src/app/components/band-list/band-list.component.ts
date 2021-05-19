@@ -1,10 +1,11 @@
+import { Band } from 'src/app/models/band.model';
 import { SharedService } from '../../services/shared.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Pipe } from '@angular/core';
 import { ImagePickerConf } from 'ngp-image-picker';
-
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
-  selector: 'app-bandList',
+  selector: 'app-band-list',
   templateUrl: './band-list.component.html',
   styleUrls: ['./band-list.component.scss'],
 })
@@ -14,32 +15,47 @@ export class BandListComponent implements OnInit {
   allBands = this.sharedService.getAllBands();
   mediaBands = this.sharedService.mediaBands();
 
-  nameSearch =""
+  customDisplay = false;
+  searchText = '';
 
   name = '';
   year = '';
   bio = '';
   photo = '';
+  song = '';
 
-  constructor(private router: Router,private activeRoute:ActivatedRoute, private sharedService: SharedService) {}
+  constructor(
+    private router: Router,
+    private activeRoute: ActivatedRoute,
+    private sharedService: SharedService
+  ) {}
 
   ngOnInit(): void {
     this.booleanBands = this.sharedService.mediaBands();
-    this.activeRoute.queryParams.subscribe( value => {
-      if(value.name != undefined) {
-        this.nameSearch = value.name
-      }
-    })
   }
 
+  handleFileImage(file: any) {
+    const reader = new FileReader();
+    reader.readAsDataURL(file.target.files.item(0));
+    reader.onload = () => {
+      this.photo = reader.result as string;
+      console.log(this.photo);
+    };
+  }
   mediaIcon(index: number) {
     this.sharedService.mediaIcon(index);
   }
-  search(searchValue: string){
-    if(searchValue == "") {
 
+  search(searchValue: HTMLInputElement) {
+    console.log(searchValue.value);
+    searchValue.value;
+    if (searchValue.value !== '') {
+      this.allBands = this.allBands.filter((band: Band) => {
+        return band.name?.includes(searchValue.value);
+      });
+      console.log('patata');
     } else {
-      this.router.navigate(["/catalogoHome"], { queryParams: { name: searchValue}})
+      this.allBands = this.sharedService.getAllBands();
     }
   }
 
@@ -55,9 +71,24 @@ export class BandListComponent implements OnInit {
       name: bandName,
       year: bandYear,
       bio: bandBio,
-      photo: '../../../assets/images/bandImages/51QmOMYg4jL._AC_SX425_.jpg',
+      song: this.song,
+      photo: this.photo,
     };
     this.allBands.push(newBand);
     console.log(newBand);
+  }
+
+  transform(items: any[], searchText: string): any[] {
+    if (!items) {
+      return [];
+    }
+    if (!searchText) {
+      return items;
+    }
+    searchText = searchText.toLocaleLowerCase();
+
+    return items.filter((it) => {
+      return it.toLocaleLowerCase().includes(searchText);
+    });
   }
 }

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/services/shared.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ImagePickerConf } from 'ngp-image-picker';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-bandDetail',
@@ -13,16 +14,21 @@ export class BandDetailComponent implements OnInit {
   booleanBands: Array<Boolean> = [];
   allBands = this.sharedService.getAllBands();
   mediaBands = this.sharedService.mediaBands();
+
   band: Band = new Band();
+
+  customDisplay = false;
   edit = false;
   name = '';
   year = '';
   bio = '';
   photo = '';
+  song = '';
+
   constructor(
     private sharedService: SharedService,
     private router: ActivatedRoute,
-    private routes:Router
+    private routes: Router
   ) {}
 
   ngOnInit(): void {
@@ -40,7 +46,14 @@ export class BandDetailComponent implements OnInit {
       this.edit = false;
     }
   }
-  saveChanges() {}
+  handleFileImage(file: any) {
+    const reader = new FileReader();
+    reader.readAsDataURL(file.target.files.item(0));
+    reader.onload = () => {
+      this.photo = reader.result as string;
+      console.log(this.photo);
+    };
+  }
 
   mediaIcon(index: number) {
     this.sharedService.mediaIcon(index);
@@ -59,19 +72,20 @@ export class BandDetailComponent implements OnInit {
         name: bandName,
         year: bandYear,
         bio: bandBio,
-        photo: '../../../assets/images/bandImages/51QmOMYg4jL._AC_SX425_.jpg',
+        song: this.song,
+        photo: this.photo,
       };
-      console.log(this.allBands)
       console.log(this.allBands[params.id]);
-      return this.allBands
     });
-
+    this.band.name = bandName;
+    this.band.year = bandYear;
+    this.band.bio = bandBio;
+    this.band.photo = this.photo;
   }
-  deleteBand(){
-    this.router.params.subscribe((params)=>{
-      this.allBands.splice(params.id,1)
-    })
-    this.routes.navigate(["/bandList"])
-
+  deleteBand() {
+    this.router.params.subscribe((params) => {
+      this.allBands.splice(params.id, 1);
+    });
+    this.routes.navigate(['/bandList']);
   }
 }
